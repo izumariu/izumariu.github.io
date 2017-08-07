@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<script>
+			function setname() {
+				var x = "";
+				while(true) {
+					x = prompt("What's your name? This is needed for an xReader fanfic.",x);
+					if("" + x.trim() == "" || x.trim().match(/^\$[RF]\$$/)) x = "Reader";
+					if( confirm("So your name is "+x+"?") ) break;
+				}
+				while(document.getElementById("text").innerHTML.match(/\$R\$/)) document.getElementById("text").innerHTML = document.getElementById("text").innerHTML.replace(/\$R\$/,x);
+				while(document.getElementById("text").innerHTML.match(/\$F\$/)) document.getElementById("text").innerHTML = document.getElementById("text").innerHTML.replace(/\$F\$/,x[0]);
+				document.getElementById("text").setAttribute("style","opacity:100");
+			}
+		</script>
+	</head>
+
+	<body onload="setname()">
+		<p id="text" style="opacity:0">
+			Hello, $R$! This is a test. I hope you enjoy this!<br>
+			Second test for $R$!<br>
+			"$F$-$R$? I-Is that you? H-Hello, $R$?", he whispered desperatedly.<br>
+			"$F$-$F$-$R$.... I love you so much....", she purred.<br>
+			"$R$. $R$! You're zoning out again." Hinata's voice rang in your head. Your eyes snapped up to meet his, giggling slightly. You had a thing for daydreaming.
+		</p>
+	</body>
+</html>
