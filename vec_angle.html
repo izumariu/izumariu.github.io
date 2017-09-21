@@ -15,6 +15,7 @@ input[type="text"] {
     width: 30px;
 }</style><script>var doclang = {
     title: "Calculate the angle between two vectors",
+    warn: "",
     error: "ERROR:$$VEC$$ - $$CAUSE$$ is not a number",
     calc: "CALCULATE"
 }
@@ -25,11 +26,13 @@ function checkLanguage() {
             doclang.title = "Den Winkel zwischen zwei Vektoren berechnen";
             doclang.error = "FEHLER:$$VEC$$ - $$CAUSE$$ ist keine Zahl";
             doclang.calc  = "BERECHNEN";
+            doclang.warn  = "Komma bitte als Punkt schreiben ('.' statt ',')"
             break;
     }
     document.title = doclang.title;
     document.getElementById("headline").innerHTML = doclang.title;
     document.getElementById("calc-button").value = doclang.calc;
+    document.getElementById("warning").innerHTML = doclang.warn;
 }
 
 function toDegs(rads) {
@@ -104,4 +107,4 @@ function calculate() {
     if(Math.floor(degs_final) !== degs_final) {
         result_display.innerHTML+=   "<br/>  = "+deg_minsecs(degs_final);
     }
-}</script></head><body onload="checkLanguage()"><h1 id="headline">Calculate the angle between two vectors</h1><br /><div class="vector"><input name="v1x" type="text" /><br /><input name="v1y" type="text" /><br /><input name="v1z" type="text" /></div><div class="vector" id="result-div"><input name="v2x" type="text" /><br /><input name="v2y" type="text" /><br /><input name="v2z" type="text" /></div><br /><br /><input id="calc-button" onclick="calculate()" type="button" value="CALCULATE" /><h1 id="result"></h1></body></html>
+}</script></head><body onload="checkLanguage()"><h1 id="headline">Calculate the angle between two vectors</h1><p id="warning"></p><br /><div class="vector"><input name="v1x" type="text" /><br /><input name="v1y" type="text" /><br /><input name="v1z" type="text" /></div><div class="vector" id="result-div"><input name="v2x" type="text" /><br /><input name="v2y" type="text" /><br /><input name="v2z" type="text" /></div><br /><br /><input id="calc-button" onclick="calculate()" type="button" value="CALCULATE" /><h1 id="result"></h1></body></html>
