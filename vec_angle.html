@@ -1,0 +1,107 @@
+<!DOCTYPE html><html><head><title>Calculate the angle between two vectors</title><style type="text/css">body {
+    text-align: center;
+}
+
+div.vector {
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 4px;
+    width: 50px;
+    margin-right: 7px;
+    padding: 4px;
+}
+
+input[type="text"] {
+    width: 30px;
+}</style><script>var doclang = {
+    title: "Calculate the angle between two vectors",
+    error: "ERROR:$$VEC$$ - $$CAUSE$$ is not a number",
+    calc: "CALCULATE"
+}
+
+function checkLanguage() {
+    switch(navigator.language) {
+        case "de":
+            doclang.title = "Den Winkel zwischen zwei Vektoren berechnen";
+            doclang.error = "FEHLER:$$VEC$$ - $$CAUSE$$ ist keine Zahl";
+            doclang.calc  = "BERECHNEN";
+            break;
+    }
+    document.title = doclang.title;
+    document.getElementById("headline").innerHTML = doclang.title;
+    document.getElementById("calc-button").value = doclang.calc;
+}
+
+function toDegs(rads) {
+    return 360/(2*Math.PI) * rads;
+}
+
+function toRads(degs) {
+    return (2*Math.PI)/360 * degs;
+}
+
+function checkVectors(v1,v2) {
+    var errmsgs = "";
+    for(i in v1) {
+        if(v1[i]-0+"" === "NaN") errmsgs+=doclang.error.replace("$$VEC$$","v1").replace("$$CAUSE$$","'"+v1[i]+"'")+"<br/>";
+    }
+    for(i in v2) {
+        if(v2[i]-0+"" === "NaN") errmsgs+=doclang.error.replace("$$VEC$$","v2").replace("$$CAUSE$$","'"+v2[i]+"'")+"<br/>";
+    }
+    return (errmsgs==="" ? {success:true,msg:""} : {success:false,msg:errmsgs});
+}
+
+function deg_minsecs(degs_final) {
+    var res = Math.floor(degs_final)+"&deg;";
+    if(Math.floor(degs_final) !== degs_final) {
+
+        var mins_pre = ("0."+(degs_final+"").split(".")[1])-0;
+        var mins = mins_pre*60;
+        res += Math.floor(mins)+"&apos;";
+
+        if(Math.floor(mins) !== mins) {
+            var secs_pre = ("0."+(mins+"").split(".")[1])-0;
+            var secs = secs_pre*60;
+            res += Math.floor(secs)+"&quot;";
+        }
+
+        return res;
+
+    } else {
+        return;
+    }
+}
+
+function calculate() {
+    var v1 = [];
+    var v2 = [];
+    var veclist = document.getElementsByClassName("vector");
+    for(var i = 0; i < 3; i++) v1.push(veclist[0].children[i*2].value);
+    for(var i = 0; i < 3; i++) v2.push(veclist[1].children[i*2].value);
+    /*DEBUG
+    glob_v1 = v1;
+    glob_v2 = v2;
+    */
+    var vecs_correct = checkVectors(v1,v2);
+    var result_display = document.getElementById("result");
+
+    if(vecs_correct.success) {
+        result_display.style.color = "#00ff00";
+    } else {
+        result_display.style.color = "#ff0000";
+        result_display.innerHTML   = vecs_correct.msg;
+        return;
+    }
+
+    var prod_line = v1[0]*v2[0] + v1[1]*v2[1] + v1[2]*v2[2];
+    var abs_line  = Math.sqrt(v1[0]**2 + v1[1]**2 + v1[2]**2) * Math.sqrt(v2[0]**2 + v2[1]**2 + v2[2]**2);
+    var rad_acos  = Math.acos(prod_line / abs_line);
+    var degs_final= toDegs(rad_acos);
+
+    result_display.innerHTML = "";
+    if(degs_final===90) result_display.innerHTML += "<b>&perp;</b><br/>"
+    result_display.innerHTML += "&lambda; = "+degs_final+"&deg;";
+    if(Math.floor(degs_final) !== degs_final) {
+        result_display.innerHTML+=   "<br/>  = "+deg_minsecs(degs_final);
+    }
+}</script></head><body onload="checkLanguage()"><h1 id="headline">Calculate the angle between two vectors</h1><br /><div class="vector"><input name="v1x" type="text" /><br /><input name="v1y" type="text" /><br /><input name="v1z" type="text" /></div><div class="vector" id="result-div"><input name="v2x" type="text" /><br /><input name="v2y" type="text" /><br /><input name="v2z" type="text" /></div><br /><br /><input id="calc-button" onclick="calculate()" type="button" value="CALCULATE" /><h1 id="result"></h1></body></html>
