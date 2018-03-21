@@ -48,8 +48,8 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="1.5093162"
-     inkscape:cx="229.13222"
-     inkscape:cy="218.12691"
+     inkscape:cx="333.08358"
+     inkscape:cy="235.89207"
      inkscape:window-x="1366"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -100,7 +100,7 @@
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccc" />
   <path
-     style="fill:#ffffc9;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+     style="fill:#ffff98;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
      d="m 299.30773,94.015947 -3.89249,1.242285 -3.56121,-3.312759 -5.2176,0.745371 -4.63786,-4.886319 0.57973,-8.695991 -2.98148,-1.904836 3.14712,-8.116259 4.47222,-8.77881 6.29424,-1.159465 0.57974,-1.739198 -3.0643,-3.22994 12.34002,-3.726853 10.51801,-3.97531 10.76647,-2.815845 3.97531,0.993827 0.0828,-3.229939 8.19908,0.993827 8.2819,4.720681 2.98148,0.911009 1.49074,4.637862 4.47223,2.484569 -2.40175,2.318931 1.40792,6.956793 3.89249,2.401749 -5.88015,3.892492 -2.15329,4.886319 -9.1929,-0.993828 1.19944,1.49129 -1.14195,3.865082 -8.42221,8.308757 -13.33353,4.018529 -8.77913,2.855445 -7.37089,-1.407923 z"
      id="path110"
      inkscape:connector-curvature="0" />
@@ -173,11 +173,11 @@
      style="fill:#ffb226;fill-opacity:1;stroke:none;stroke-width:11.16120052;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <ellipse
      ry="4.4507003"
-     rx="4.6263862"
-     cy="74.282913"
-     cx="330.11316"
+     rx="4.2122912"
+     cy="74.117279"
+     cx="330.6929"
      id="ellipse1074"
-     style="fill:#ffb226;fill-opacity:1;stroke:none;stroke-width:17.38582611;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+     style="fill:#ffb226;fill-opacity:1;stroke:none;stroke-width:16.58950996;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <ellipse
      ry="4.4507003"
      rx="4.6263862"
